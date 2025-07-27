@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex items-center justify-between">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('Cars') }}</h2>
+            <h2 class="font-semibold text-xl text-purple-800 leading-tight">Cars</h2>
             <a href="{{ route('cars.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded">Add Car</a>
         </div>
     </x-slot>
@@ -19,6 +19,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
                 @forelse($cars as $car)
                     <div class="relative bg-white shadow rounded-lg overflow-hidden flex flex-col">
+                        <a href="{{ route('cars.show', $car) }}" class="absolute inset-0 z-0" aria-label="View {{ $car->make }} {{ $car->model }}"></a>
 
                         <div class="absolute top-2 right-2 {{ auth()->id() === $car->user_id ? 'bg-blue-600 text-white' : 'bg-gray-800 text-white' }} text-xs px-2 py-1 rounded z-10">
                             {{ auth()->id() === $car->user_id ? 'You' : $car->user->name }}
@@ -35,12 +36,12 @@
                             </div>
                             <!-- Detailed info hidden on index; view full details on show page -->
                             <div class="mt-4 flex flex-wrap space-x-2">
-                                <a href="{{ route('cars.show', $car) }}" class="px-2 py-1 bg-blue-800 text-white text-sm rounded">More...</a>
+                                <a href="{{ route('cars.show', $car) }}" onclick="event.stopPropagation()" class="px-2 py-1 bg-blue-800 text-white text-sm rounded">More...</a>
                                 @if(auth()->id() === $car->user_id)
-                                    <a href="{{ route('cars.edit', $car) }}" class="px-2 py-1 bg-green-600 text-white text-sm rounded">Edit</a>
+                                    <a href="{{ route('cars.edit', $car) }}" onclick="event.stopPropagation()" class="px-2 py-1 bg-green-600 text-white text-sm rounded">Edit</a>
                                 @endif
                                 @if(auth()->check() && auth()->id() !== $car->user_id && !in_array($car->id, $cartIds))
-                                    <form action="{{ route('cart.store') }}" method="POST" class="inline">
+                                    <form action="{{ route('cart.store') }}" method="POST" class="inline" onclick="event.stopPropagation()">
                                         @csrf
                                         <input type="hidden" name="car_id" value="{{ $car->id }}">
                                         <button type="submit" class="px-2 py-1 bg-yellow-500 text-white text-sm rounded">Add to Cart</button>
@@ -48,7 +49,8 @@
                                 @endif
                                 @if(auth()->id() === $car->user_id)
                                     <button type="button"
-                                            class="open-delete-modal px-2 py-1 text-white bg-red-600  text-sm rounded"
+                                            onclick="event.stopPropagation()"
+                                            class="open-delete-modal px-2 py-1 text-white bg-red-600 text-sm rounded"
                                             data-id="{{ $car->id }}"
                                             data-make="{{ $car->make }}"
                                             data-model="{{ $car->model }}"
