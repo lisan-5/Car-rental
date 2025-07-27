@@ -9,7 +9,7 @@
     <div class="max-w-4xl mx-auto py-6 px-4 space-y-6">
         <div class="bg-white rounded-lg shadow overflow-hidden">
             @if($car->image_path)
-                <img src="{{ Storage::url($car->image_path) }}" alt="{{ $car->make }} {{ $car->model }}" class="w-full h-64 object-cover">
+                <img src="{{ Storage::url($car->image_path) }}" alt="{{ $car->make }} {{ $car->model }}" class="w-full h-auto object-contain">
             @endif
             <div class="p-6">
                 <h3 class="text-2xl font-bold mb-4">{{ $car->year }} {{ $car->make }} {{ $car->model }}</h3>
