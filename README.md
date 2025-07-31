@@ -3,14 +3,20 @@
 This is a Laravel-based Car Rental web application where users can browse available cars, submit rental requests, and manage their own listings. Owners can accept or reject requests, and mark cars as rented or available.
 
 ## Features
-- User registration, login, and profile management
-- Browse cars with photos, specifications, and rental rates
-- Add cars for rent with image upload and pricing options (daily, weekly, monthly)
-- Add and remove cars from a personal cart
-- Submit rental requests with custom duration and message
-- Dashboard for owners: view, edit, delete cars, and manage rental requests (accept/reject)
-- Automatic filtering of rented cars from the public listings
-- Simple contact form for inquiries
+ 🎯 ## Features
+ - 🏠 Browse available cars with photos, specifications, and customizable rental rates
+ - 🔒 User registration, login, and profile management
+ - 🛒 Add and remove cars from a personal cart
+ - 📑 Submit rental requests with custom duration and personalized message
+ - 🛠 Owner dashboard: create, edit, delete your car listings
+ - ✅ Owner rental management: accept/reject requests and mark cars as rented or available
+ - 🌐 Admin user management: list, search, sort, paginate, edit, and delete users
+ - 🚗 Admin car management: list, search, sort, paginate, edit, and delete all cars
+ - 📋 Admin rental management: view, edit status, and delete all rental requests
+ - 🔍 Server-side pagination, sorting, and filtering on admin listings
+ - 📊 User dashboard: view your rental request history and status updates
+ - 📞 Simple contact form for inquiries
+
 
 ## Requirements
 - PHP >= 8.0
