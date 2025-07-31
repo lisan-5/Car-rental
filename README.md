@@ -1,6 +1,6 @@
 # Car Rental Application
 
-This is a Laravel-based Car Rental web application where users can browse available cars, submit rental requests, and manage their own listings. Owners can accept or reject requests, and mark cars as rented or available.
+A Laravel-based car rental marketplace 🚗 where registered users can seamlessly list vehicles with photos and dynamic pricing, browse and add cars to a personal cart 🛒, submit tailored rental requests 📅 with personalized messages, owners manage their fleet and booking statuses via a sleek dashboard 🛠, and administrators oversee users, cars, and rentals with powerful server-side filtering, sorting, pagination, and role
 
 ## Features
  🎯 ## Features
